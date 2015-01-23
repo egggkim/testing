@@ -5,8 +5,8 @@ RSpec.describe Book, :type => :model do
     expect(FactoryGirl.build(:book)).to be_valid
   end
 
-  it "is invalid without a title"
-  it "is invalid without an author"
-  it "is invalid without a genre"
-  it "is invalid without a summary"
+  it "is invalid without a title" do
+    expect(FactoryGirl.build(:book, title: nil)).to be_invalid
+  end
+
 end
