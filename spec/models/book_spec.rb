@@ -9,6 +9,10 @@ RSpec.describe Book, :type => :model do
     expect(FactoryGirl.build(:book, title: nil)).to be_invalid
   end
 
+  it "it returns a book title as a string" do
+    expect(FactoryGirl.build(:book).title).to be_an_instance_of(String)
+  end
+
   it "is invalid without an author name" do
     expect(FactoryGirl.build(:book, authorname: nil)).to be_invalid
   end
